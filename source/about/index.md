@@ -20,6 +20,11 @@ date: 2026-06-05 18:00:00
   .about-page .hobby-list li .hobby-dot { display: inline-block; width: 8px; height: 8px; background: #4eb8a8; border-radius: 50%; margin-right: 14px; vertical-align: middle; }
   .about-page .about-footer { margin-top: 40px; padding: 16px 20px; background: #eef7f5; border-radius: 10px; text-align: center; font-size: 15px; color: #8ba3a0; }
   .about-page .about-footer a { color: #4eb8a8; text-decoration: none; font-weight: 500; }
+  .about-page .about-quote { text-align: center; margin: 20px 0 10px 0; padding: 20px 16px; background: linear-gradient(135deg, #f8fafa 0%, #eef7f5 50%, #f0f7f8 100%); border-radius: 16px; position: relative; }
+  .about-page .about-quote-text { font-family: 'STKaiti', 'KaiTi', '楷体', 'Noto Serif SC', 'Source Han Serif SC', serif; font-size: 22px; color: #3a6a7a; line-height: 2; margin: 4px 0; letter-spacing: 3px; }
+  .about-page .about-quote-text:first-of-type { font-size: 24px; color: #2a5a6a; }
+  .about-page .about-quote-text:last-of-type { font-size: 24px; color: #2a5a6a; }
+  .about-page .about-quote-line { width: 60px; height: 2px; background: linear-gradient(90deg, transparent, #4eb8a8, transparent); margin: 10px auto; border-radius: 1px; }
 </style>
 
 <div class="about-page">
@@ -34,7 +39,14 @@ date: 2026-06-05 18:00:00
 
 <p class="about-intro">你好！我是 <strong>FrostLeafKEE</strong>，欢迎来到我的博客。</p>
 
-<p class="about-intro">这里写你的自我介绍...</p>
+<div class="about-quote">
+  <div class="about-quote-line"></div>
+  <p class="about-quote-text">「即使我们奔胜于死亡的巨轮，</p>
+  <p class="about-quote-text">那又有何意义所在？</p>
+  <p class="about-quote-text">若我们执着于逃离此痛，</p>
+  <p class="about-quote-text">便无法抓住沿途的丽景。」</p>
+  <div class="about-quote-line"></div>
+</div>
 
 ## 我的信息
 

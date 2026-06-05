@@ -20,6 +20,127 @@
 <% } %>
 
 <%- js('js/script') %>
+
+<!-- PJAX: 页面无刷新切换，保持背景音乐持续播放 -->
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+<script>
+(function() {
+  // ======== 打字机效果 ========
+  var twTimers = [];
+  function clearTypewriter() {
+    twTimers.forEach(function(t) { clearTimeout(t); });
+    twTimers = [];
+  }
+
+  function startTypewriter() {
+    var titleEl = document.getElementById('tw-title');
+    var subEl = document.getElementById('tw-subtitle');
+    if (!titleEl || !subEl) return; // 非首页，没有打字机元素
+
+    clearTypewriter();
+
+    var titleText = 'FrostLeafKEE';
+    var sentences = [
+      '欢迎来到我的博客 🍃',
+      '记录生活的点点滴滴',
+      '分享技术与热爱',
+      '二次元爱好者 | 昆虫迷',
+      '学生一枚，请多关照',
+      '每一天都是新的开始',
+      '霜叶红于二月花',
+      '遇见困难睡大觉'
+    ];
+    var sentenceIndex = 0;
+
+    function type(el, text, speed, callback) {
+      var i = 0;
+      el.textContent = '';
+      function tick() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          twTimers.push(setTimeout(tick, speed));
+        } else if (callback) {
+          callback();
+        }
+      }
+      tick();
+    }
+
+    function erase(el, speed, callback) {
+      function tick() {
+        var text = el.textContent;
+        if (text.length > 0) {
+          el.textContent = text.slice(0, -1);
+          twTimers.push(setTimeout(tick, speed));
+        } else if (callback) {
+          callback();
+        }
+      }
+      tick();
+    }
+
+    function nextSentence() {
+      var sentence = sentences[sentenceIndex % sentences.length];
+      sentenceIndex++;
+      type(subEl, sentence, 80, function() {
+        twTimers.push(setTimeout(function() {
+          erase(subEl, 40, function() {
+            twTimers.push(setTimeout(nextSentence, 400));
+          });
+        }, 10000));
+      });
+    }
+
+    type(titleEl, titleText, 100, function() {
+      twTimers.push(setTimeout(nextSentence, 600));
+    });
+  }
+
+  // 初始加载时启动打字机（仅首页有元素）
+  startTypewriter();
+
+  // ======== PJAX ========
+  if (typeof Pjax === 'undefined') return;
+
+  var pjax = new Pjax({
+    elements: 'a[href]:not([target="_blank"]):not([download]):not([rel="external"])',
+    selectors: ['title', '#pjax-container'],
+    cacheBust: false
+  });
+
+  // PJAX 发送前：清理打字机定时器
+  document.addEventListener('pjax:send', function() {
+    clearTypewriter();
+  });
+
+  // PJAX 内容替换完成后
+  document.addEventListener('pjax:success', function() {
+    // 重新初始化 fancybox 图片灯箱
+    var $entries = jQuery('.article-entry');
+    if ($entries.length) {
+      $entries.each(function(i) {
+        jQuery(this).find('img').each(function() {
+          if (jQuery(this).parent().hasClass('fancybox') || jQuery(this).parent().is('a')) return;
+          var alt = this.alt;
+          if (alt) jQuery(this).after('<span class="caption">' + alt + '</span>');
+          jQuery(this).wrap('<a href="' + this.src + '" data-fancybox="gallery" data-caption="' + alt + '"></a>');
+        });
+        jQuery(this).find('.fancybox').each(function() {
+          jQuery(this).attr('rel', 'article' + i);
+        });
+      });
+      if (jQuery.fancybox) {
+        jQuery('.fancybox').fancybox();
+      }
+    }
+
+    // 如果切换到首页，重新启动打字机
+    startTypewriter();
+  });
+})();
+</script>
+
 <%- partial('gauges-analytics') %>
 
 
