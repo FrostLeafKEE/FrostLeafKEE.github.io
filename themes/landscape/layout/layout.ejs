@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<%- partial('_partial/head') %>
+<body>
+  <!-- 背景音乐 - 进入博客自动播放 -->
+  <audio autoplay loop style="display:none;" id="bgm-player">
+    <source src="/music/SAIKAI.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var bgm = document.getElementById('bgm-player');
+      if (bgm) { bgm.volume = 0.35; }
+    });
+  </script>
+
+  <div id="container">
+    <div id="wrap">
+      <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+
+      <!-- 首页全屏 Hero -->
+      <% if (is_home()){ %>
+        <%- partial('_partial/hero') %>
+      <% } %>
+
+      <div class="outer">
+        <section id="main"><%- body %></section>
+        <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
+          <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+        <% } %>
+      </div>
+      <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+    </div>
+    <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
+    <%- partial('_partial/after-footer') %>
+  </div>
+
+</body>
+</html>
