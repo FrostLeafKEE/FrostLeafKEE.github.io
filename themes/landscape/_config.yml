@@ -48,7 +48,6 @@ sidebar: right
 widgets:
 - profile
 - category
-- tag
 - tagcloud
 - archive
 - recent_posts
