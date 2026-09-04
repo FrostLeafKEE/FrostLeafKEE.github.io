@@ -35,6 +35,7 @@
         <% if (theme.rss){ %>
           <a class="nav-icon" href="<%- url_for(theme.rss) %>" title="<%= __('rss_feed') %>"><span class="fa fa-rss"></span></a>
         <% } %>
+        <a class="nav-icon bgm-toggle" id="bgm-toggle" title="播放音乐" aria-label="播放音乐" aria-pressed="false"><span class="fa fa-music" aria-hidden="true"></span></a>
         <a class="nav-icon nav-search-btn" title="<%= __('search') %>"><span class="fa fa-search"></span></a>
       </nav>
       <div id="search-form-wrap">

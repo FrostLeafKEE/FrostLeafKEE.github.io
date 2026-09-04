@@ -108,10 +108,10 @@ $nav-link
 
 #search-form-wrap
   position: absolute
-  top: 15px
-  width: 150px
-  height: 30px
-  right: -150px
+  top: 10px
+  width: 210px
+  height: 36px
+  right: -210px
   opacity: 0
   transition: 0.2s ease-out
   &.on
@@ -126,10 +126,13 @@ $nav-link
   top: 0
   left: 0
   right: 0
-  background: #fff
-  padding: 5px 15px
-  border-radius: 15px
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
+  background: rgba(238, 247, 245, 0.94)
+  border: 1px solid rgba(255, 255, 255, 0.8)
+  padding: 7px 42px 7px 16px
+  border-radius: 20px
+  box-shadow: 0 5px 18px rgba(21, 46, 44, 0.25)
+  backdrop-filter: blur(8px)
+  -webkit-backdrop-filter: blur(8px)
 
 .search-form-input
   border: none
@@ -137,7 +140,10 @@ $nav-link
   color: color-default
   width: 100%
   font: 13px font-sans
+  line-height: 20px
   outline: none
+  &::placeholder
+    color: color-grey
   &::-webkit-search-results-decoration
   &::-webkit-search-cancel-button
     -webkit-appearance: none
@@ -150,7 +156,8 @@ $nav-link
   font: 13px font-icon
   border: none
   background: none
-  color: #bbb
+  color: color-link
   cursor: pointer
+  transition: color 0.2s
   &:hover, &:focus
-    color: #777
+    color: darken(color-link, 20%)

@@ -98,6 +98,13 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: landscape
 
+# Feed
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+
 # live2d 看板娘配置 (hexo-helper-live2d)
 ## Docs: https://github.com/EYHN/hexo-helper-live2d
 live2d:

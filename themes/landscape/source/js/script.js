@@ -1,4 +1,37 @@
 (function($){
+  // Background music
+  var bgm = document.getElementById('bgm-player'),
+    $bgmToggle = $('#bgm-toggle');
+
+  if (bgm && $bgmToggle.length) {
+    var updateBgmToggle = function(){
+      var isPlaying = !bgm.paused;
+      $bgmToggle.attr({
+        title: isPlaying ? '暂停音乐' : '播放音乐',
+        'aria-label': isPlaying ? '暂停音乐' : '播放音乐',
+        'aria-pressed': isPlaying ? 'true' : 'false'
+      });
+      $bgmToggle.find('.fa')
+        .toggleClass('fa-music', !isPlaying)
+        .toggleClass('fa-pause', isPlaying);
+    };
+
+    updateBgmToggle();
+    bgm.addEventListener('play', updateBgmToggle);
+    bgm.addEventListener('pause', updateBgmToggle);
+
+    $('body').on('click', '#bgm-toggle', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (bgm.paused) {
+        bgm.play().catch(function() {});
+      } else {
+        bgm.pause();
+      }
+    });
+  }
+
   // Search
   var $searchWrap = $('#search-form-wrap'),
     isSearchAnim = false,
