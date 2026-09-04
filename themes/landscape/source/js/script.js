@@ -11,9 +11,7 @@
         'aria-label': isPlaying ? '暂停音乐' : '播放音乐',
         'aria-pressed': isPlaying ? 'true' : 'false'
       });
-      $bgmToggle.find('.fa')
-        .toggleClass('fa-music', !isPlaying)
-        .toggleClass('fa-pause', isPlaying);
+      $bgmToggle.toggleClass('is-paused', !isPlaying);
     };
 
     updateBgmToggle();
