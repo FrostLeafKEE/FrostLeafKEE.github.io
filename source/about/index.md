@@ -59,7 +59,7 @@ date: 2026-06-05 18:00:00
 
 <ul class="hobby-list">
   <li><span class="hobby-dot"></span>🎵 音乐</li>
-  <li><span class="hobby-dot"></span>📚 阅读</li>
+  <li><span class="hobby-dot"></span>🎮 游戏</li>
   <li><span class="hobby-dot"></span>💻 编程</li>
   <li><span class="hobby-dot"></span>🎨 二次元</li>
   <li><span class="hobby-dot"></span>🪲 昆虫</li>
