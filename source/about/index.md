@@ -14,6 +14,11 @@ date: 2026-06-05 18:00:00
   .about-page .info-list { list-style: none; padding: 0; font-size: 18px; }
   .about-page .info-list li { padding: 12px 20px; margin: 8px 0; background: #eef7f5; border-radius: 10px; border-left: 4px solid #4eb8a8; }
   .about-page .info-list li .info-icon { font-size: 22px; margin-right: 12px; }
+  .about-page .info-list .email-item { padding: 0; transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; }
+  .about-page .info-list .email-item:hover { transform: translateX(6px); background: #d8eeea; box-shadow: 0 4px 12px rgba(78,184,168,0.2); }
+  .about-page .email-link { display: block; padding: 12px 20px; color: inherit; text-decoration: none; border-radius: 8px; overflow-wrap: anywhere; }
+  .about-page .email-link:focus-visible { outline: 2px solid #3a8a7e; outline-offset: -4px; }
+  @media (prefers-reduced-motion: reduce) { .about-page .info-list .email-item { transition: none; } .about-page .info-list .email-item:hover { transform: none; } }
   .about-page .hobby-list { list-style: none; padding: 0; }
   .about-page .hobby-list li { margin: 10px 0; background: linear-gradient(135deg, #eef7f5, #d8eeea); border-radius: 12px; font-size: 20px; color: #3a7a6e; border-left: 5px solid #4eb8a8; letter-spacing: 2px; transition: all 0.3s ease; }
   .about-page .hobby-list li:hover { transform: translateX(6px); background: linear-gradient(135deg, #d8eeea, #c8e6e0); box-shadow: 0 4px 12px rgba(78,184,168,0.2); }
@@ -59,7 +64,7 @@ date: 2026-06-05 18:00:00
 ## 我的信息
 
 <ul class="info-list">
-  <li><span class="info-icon">📧</span><strong>邮箱：</strong>FrostLeafKEE@outlook.com</li>
+  <li class="email-item"><a class="email-link" href="mailto:FrostLeafKEE@outlook.com"><span class="info-icon">📧</span><strong>邮箱：</strong>FrostLeafKEE@outlook.com</a></li>
   <li><span class="info-icon">💼</span><strong>职业：</strong>学生</li>
 </ul>
 
