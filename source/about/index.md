@@ -15,9 +15,17 @@ date: 2026-06-05 18:00:00
   .about-page .info-list li { padding: 12px 20px; margin: 8px 0; background: #eef7f5; border-radius: 10px; border-left: 4px solid #4eb8a8; }
   .about-page .info-list li .info-icon { font-size: 22px; margin-right: 12px; }
   .about-page .hobby-list { list-style: none; padding: 0; }
-  .about-page .hobby-list li { padding: 14px 24px; margin: 10px 0; background: linear-gradient(135deg, #eef7f5, #d8eeea); border-radius: 12px; font-size: 20px; color: #3a7a6e; border-left: 5px solid #4eb8a8; letter-spacing: 2px; transition: all 0.3s ease; }
+  .about-page .hobby-list li { margin: 10px 0; background: linear-gradient(135deg, #eef7f5, #d8eeea); border-radius: 12px; font-size: 20px; color: #3a7a6e; border-left: 5px solid #4eb8a8; letter-spacing: 2px; transition: all 0.3s ease; }
   .about-page .hobby-list li:hover { transform: translateX(6px); background: linear-gradient(135deg, #d8eeea, #c8e6e0); box-shadow: 0 4px 12px rgba(78,184,168,0.2); }
   .about-page .hobby-list li .hobby-dot { display: inline-block; width: 8px; height: 8px; background: #4eb8a8; border-radius: 50%; margin-right: 14px; vertical-align: middle; }
+  .about-page .hobby-list summary { padding: 14px 24px; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 12px; }
+  .about-page .hobby-list summary::-webkit-details-marker { display: none; }
+  .about-page .hobby-list summary::after { content: ''; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); margin-left: auto; flex-shrink: 0; transition: transform 0.2s ease; }
+  .about-page .hobby-list details[open] > summary::after { transform: rotate(225deg); }
+  .about-page .hobby-list summary:focus-visible { outline: 2px solid #3a8a7e; outline-offset: -4px; border-radius: 10px; }
+  .about-page .hobby-content { margin: 0 24px; padding: 12px 0 18px; border-top: 1px solid rgba(78,184,168,0.25); min-height: 24px; font-size: 17px; letter-spacing: 0; overflow-wrap: anywhere; }
+  .about-page .hobby-content p { margin: 6px 0; }
+  @media (prefers-reduced-motion: reduce) { .about-page .hobby-list li, .about-page .hobby-list summary::after { transition: none; } .about-page .hobby-list li:hover { transform: none; } }
   .about-page .about-footer { margin-top: 40px; padding: 16px 20px; background: #eef7f5; border-radius: 10px; text-align: center; font-size: 15px; color: #8ba3a0; }
   .about-page .about-footer a { color: #4eb8a8; text-decoration: none; font-weight: 500; }
   .about-page .about-quote { text-align: center; margin: 20px 0 10px 0; padding: 20px 16px; background: linear-gradient(135deg, #f8fafa 0%, #eef7f5 50%, #f0f7f8 100%); border-radius: 16px; position: relative; }
@@ -58,11 +66,17 @@ date: 2026-06-05 18:00:00
 ## 兴趣爱好
 
 <ul class="hobby-list">
-  <li><span class="hobby-dot"></span>🎵 音乐</li>
-  <li><span class="hobby-dot"></span>🎮 游戏</li>
-  <li><span class="hobby-dot"></span>💻 编程</li>
-  <li><span class="hobby-dot"></span>🎨 二次元</li>
-  <li><span class="hobby-dot"></span>🪲 昆虫</li>
+  <li><details><summary><span><span class="hobby-dot"></span>🎵 音乐</span></summary>
+    <div class="hobby-content">
+      <p>Mili - Through Patches of Violet</p>
+      <p>Mili - TIAN TIAN</p>
+      <p>End Like This</p>
+    </div>
+  </details></li>
+  <li><details><summary><span><span class="hobby-dot"></span>🎮 游戏</span></summary><div class="hobby-content"></div></details></li>
+  <li><details><summary><span><span class="hobby-dot"></span>💻 编程</span></summary><div class="hobby-content"></div></details></li>
+  <li><details><summary><span><span class="hobby-dot"></span>🎨 二次元</span></summary><div class="hobby-content"></div></details></li>
+  <li><details><summary><span><span class="hobby-dot"></span>🪲 昆虫</span></summary><div class="hobby-content"></div></details></li>
 </ul>
 
 ## 关于本站
