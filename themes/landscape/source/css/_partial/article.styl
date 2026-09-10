@@ -5,6 +5,19 @@
   @extend $block
   overflow: hidden
 
+.home-content-surface
+  background: linear-gradient(rgba(238, 247, 245, 0.35), rgba(238, 247, 245, 0.55)), url('/img/fengjing.png') center / cover
+  .article-inner
+    background: rgba(245, 251, 249, 0.94)
+    border: 1px solid rgba(255, 255, 255, 0.7)
+    border-radius: 18px
+    box-shadow: 0 12px 36px rgba(21, 46, 44, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.7)
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)))
+    .article-inner
+      background: rgba(245, 251, 249, 0.74)
+      -webkit-backdrop-filter: blur(18px) saturate(120%)
+      backdrop-filter: blur(18px) saturate(120%)
+
 .article-meta
   clearfix()
 
