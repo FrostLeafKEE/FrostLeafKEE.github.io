@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1190" viewBox="0 0 960 1190" role="img" aria-labelledby="title desc">
+  <title id="title">PCL 下载功能变动：你现在在哪一步？</title>
+  <desc id="desc">没有启动器时从官方渠道获取；已有启动器时判断当前版本是否限制下载。旧版先备份并检查更新设置，已更新则看旧版备份或官方安装方式，不清楚则先查版本号。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#728b87"/></marker>
+    <style>
+      text { font-family: "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #294e49; text-anchor: middle; }
+      .node { fill: #eef7f5; stroke: #6ab4a5; stroke-width: 2; }
+      .decision { fill: #edf3ff; stroke: #8b9fc8; stroke-width: 2; }
+      .route { fill: none; stroke: #728b87; stroke-width: 2; marker-end: url(#arrow); }
+      .label { font-size: 24px; font-weight: 600; }
+      .small { font-size: 22px; fill: #59756f; }
+      .branch { font-size: 23px; fill: #5a706c; }
+    </style>
+  </defs>
+  <rect x="1" y="1" width="958" height="1188" rx="24" fill="#fbfdfc" stroke="#dbeae5" stroke-width="2"/>
+  <text x="480" y="58" font-size="32" font-weight="700">PCL 不能下载了：先确认自己的情况</text>
+  <text x="480" y="94" class="small">PCL / PCL-CE · 整理于 2026-10-24</text>
+
+  <rect x="357" y="130" width="246" height="66" rx="14" class="node"/>
+  <text x="480" y="172" class="label">从你现在的状态开始</text>
+  <path d="M480 196 V236" class="route"/>
+  <path d="M480 236 L665 356 L480 476 L295 356 Z" class="decision"/>
+  <text x="480" y="346" class="label">电脑上已经有</text>
+  <text x="480" y="383" class="label">PCL / PCL-CE 吗？</text>
+
+  <path d="M295 356 H176 V494" class="route"/>
+  <rect x="197" y="336" width="72" height="37" rx="8" fill="#fbfdfc"/>
+  <text x="233" y="363" class="branch">没有</text>
+  <rect x="40" y="494" width="272" height="128" rx="16" class="node"/>
+  <text x="176" y="538" class="label">还没有启动器</text>
+  <text x="176" y="575" class="small">从官方渠道获取</text>
+  <text x="176" y="604" class="small">旧版分享见文末</text>
+
+  <path d="M480 476 V535" class="route"/>
+  <text x="507" y="513" class="branch">有</text>
+  <path d="M480 535 L679 665 L480 795 L281 665 Z" class="decision"/>
+  <text x="480" y="655" class="label">当前版本是否</text>
+  <text x="480" y="692" class="label">已经限制下载？</text>
+
+  <path d="M281 665 H176 V930" class="route"/>
+  <rect x="137" y="794" width="78" height="38" rx="8" fill="#fbfdfc"/>
+  <text x="176" y="821" class="branch">还没有</text>
+  <path d="M480 795 V930" class="route"/>
+  <rect x="441" y="839" width="78" height="38" rx="8" fill="#fbfdfc"/>
+  <text x="480" y="866" class="branch">已经</text>
+  <path d="M679 665 H784 V930" class="route"/>
+  <rect x="745" y="794" width="78" height="38" rx="8" fill="#fbfdfc"/>
+  <text x="784" y="821" class="branch">不清楚</text>
+
+  <rect x="40" y="930" width="272" height="144" rx="16" class="node"/>
+  <text x="176" y="973" class="label">旧版仍有下载入口</text>
+  <text x="176" y="1010" class="small">先备份启动器和存档</text>
+  <text x="176" y="1043" class="small">再检查更新设置</text>
+  <rect x="344" y="930" width="272" height="144" rx="16" class="node"/>
+  <text x="480" y="973" class="label">已更新到调整版</text>
+  <text x="480" y="1010" class="small">查看旧版备份</text>
+  <text x="480" y="1043" class="small">或使用官方启动器</text>
+  <rect x="648" y="930" width="272" height="144" rx="16" class="node"/>
+  <text x="784" y="973" class="label">先确认完整版本号</text>
+  <text x="784" y="1010" class="small">看「关于」或 exe 属性</text>
+  <text x="784" y="1043" class="small">再回来看版本对照表</text>
+
+  <text x="480" y="1126" class="small">原版与社区版的影响范围不同，以正文版本表为准。</text>
+  <text x="480" y="1160" font-size="19" fill="#8ba39c">FrostLeafKEE · 启动器与下载源状态可能随时间变化</text>
+</svg>
